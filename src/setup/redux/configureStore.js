@@ -1,7 +1,7 @@
-import { applyMiddleware, createStore, compose } from 'redux'
-import { persistStore, persistReducer } from 'redux-persist'
+import {applyMiddleware, createStore, compose} from 'redux'
+import {persistStore, persistReducer} from 'redux-persist'
 import createSagaMiddleware from 'redux-saga'
-import localforage from 'localforage'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import reducers from './Reducers/index'
 import rootSaga from './Sagas/rootSaga'
@@ -10,7 +10,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 const persistConfig = {
   key: 'reduxState',
-  storage: localforage,
+  storage: AsyncStorage,
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)
@@ -27,5 +27,5 @@ export default function configureStore() {
 
   const persistor = persistStore(store)
 
-  return { store, persistor }
+  return {store, persistor}
 }
