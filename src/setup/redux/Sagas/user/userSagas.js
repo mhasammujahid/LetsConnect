@@ -1,7 +1,7 @@
-import { takeEvery } from 'redux-saga/effects'
+import {takeEvery} from 'redux-saga/effects'
 import fetchData from '../sagaHelper'
 
-import { SIGN_UP } from '../../Actions/Users/ActionTypes/ApiActionTypes'
+import {SIGN_UP} from '../../Actions/Users/ActionTypes/ApiActionTypes'
 
 function* dataSaga() {
   yield takeEvery(SIGN_UP, fetchData)
