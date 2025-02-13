@@ -5,7 +5,7 @@ import {name as appName} from './app.json'
 import {Provider as ReduxProvider} from 'react-redux'
 import {MD2LightTheme, Provider as PaperProvider} from 'react-native-paper'
 
-import store from './src/setup/redux/store'
+import store from './src/setup/redux/Store'
 
 const theme = {
   ...MD2LightTheme,
